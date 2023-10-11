@@ -1,0 +1,136 @@
+# cidade = 'São Carlos'
+# endereco = 'Rua Cândido Padim, 25 - Vila Prado'
+# completo = cidade + endereco
+# print(cidade.startswith('São'))
+# print(cidade.endswith('los'))
+# print('Rua' in completo)
+# print("Avenida" not in completo)
+
+# texto = "Python é uma linguagem legal"
+
+# print(texto.count('é'))
+# print(texto.find('Python',25, 50))
+# print(texto.rfind('é'))
+# print(texto.index('é'))
+# print(texto.rindex('é'))
+
+# nomes = "João Paulo/Maria Paula/Ana Beatriz/José Pedro"
+# print(nomes.split('/'))
+
+# nomes = "João Paulo\nMaria Paula\nAna Beatriz\nJosé Pedro"
+# print(nomes.splitlines())
+
+# f = 'A força eletromotriz induzida em qualquer circuito fechado é igual ao negativo da variação do fluxo magnético com o tempo na área delimitada pelo circuito'
+# f1 = f.replace('força','Bicicleta')
+# f2 = f.replace('','#')
+# print(f1)
+# print(f2)
+
+# a = '   Olá mundo   '
+# print(f'*{a}*')
+# b = a.strip()
+# print(f'*{b}*')
+# c = a.lstrip()
+# print(f'*{c}*')
+# d = a.rstrip()
+# print(f'*{d}*')
+
+# Exercício 1: Escreva um programa que verifique se a palavra "python" está presente na string "Estou aprendendo Python".
+
+# frase = "Estou aprendendo Python"
+# if "python" in frase.lower():
+#   print("Python está presente na string")
+# else:
+#   print("Python não está presente na string")
+
+# exercício 2: Escreva um programa que peça ao usuário para digitar seu nome e verifique se o nome começa com a letra "A" (maiúscula ou minúscula).
+
+# nome = input("Digite o seu nome aqui: ").lower()
+# if nome[0] == 'a':
+#   print('Seu nome começa com a letra a!')
+# else:
+#   print('Seu nome não começa coma letra a!')
+
+# Exercício 3: Escreva um programa que peça ao usuário para digitar uma senha e verifique se a senha contém pelo menos 8 caracteres.
+
+# print("Digite uma senha com pelo menos 8 caracteres!")
+
+# senha = input("Digite uma senha aqui: ")
+# if len(senha) >= 8:
+#   print("A sua senha atende aos requisitos de segurança")
+# else:
+#   print("A sua senha contem menos de 8 caracteres e não atende aos requisitos de segurança!")
+
+# Exercício 4: Escreva um programa que peça ao usuário para digitar um número e verifique se o número é uma representação numérica (não contém letras ou símbolos).
+
+# numero = input("Digite um número: ")
+
+# if numero.isdigit():
+#     print("O número é uma representação numérica.")
+# else:
+#     print("O valor digitado não é uma representação numérica.")
+
+
+# Exercício 5: Escreva um programa que peça ao usuário para digitar uma frase e conte quantas vezes a letra "a" (maiúscula ou minúscula) aparece na frase.
+# frase = input("Digite uma frase: ").lower()
+# count = frase.count("a")
+# print(f'A letra "a" aparece {count} vezes na frase.')
+
+# 6 - Faça um programa que leia 2 strings e informe o conteúdo delas seguido do seu comprimento. Informe também se as duas strings possuem o mesmo comprimento e são iguais ou diferentes no conteúdo.
+
+# string1 = input("Digite aqui uma frase: ")
+# string2 = input("Digite aqui uma outra frase: ")
+# comprimento1 = len(string1)
+# comprimento2 = len(string2)
+# print(len(string1), string1)
+# print(len(string2), string2)
+
+# if string1 == string2:
+#   print("As duas frases tem o mesmo comprimento")
+# else:
+#   print("O compirmento é diferente")
+
+
+# 7 - Faça um programa que solicite o nome do usuário e imprima-o na vertical.
+
+# nome = input("Digite o seu nome: ")
+# for letra in nome:
+#   print(letra)
+
+### Segunda forma de fazer a mesma coisa
+
+# nome = input("Digite o seu nome: ")
+# i = 0
+
+# while i < len(nome):
+#     print(nome[i])
+#     i += 1
+### Terceira forma de fazer a mesma coisa
+# nome = input("Digite o seu nome: ")
+# caracteres = [letra for letra in nome]
+
+# for letra in caracteres:
+#     print(letra)
+
+### Quarta forma
+# nome = input("Digite o seu nome: ")
+# vertical = '\n'.join(nome)
+# print(vertical)
+
+### Quinta forma
+# nome = input("Digite o seu nome: ")
+# for i in range(len(nome)):
+#     print(nome[i])
+
+### Sexta forma
+nome = input("Digite o seu nome: ")
+nome_bytes = nome.encode('utf-8')
+
+for byte in nome_bytes:
+    bin_value = bin(byte)[2:].zfill(8)  # Converte o byte em uma representação binária de 8 bits
+    for bit in bin_value:
+        if bit == '1':
+            print('*', end=' ')
+        else:
+            print(' ', end=' ')
+    print()  # Quebra de linha após cada caractere
